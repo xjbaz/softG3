@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/mypage">
+
+    <activity
+        android:id="@+id/mypage"
+        android:name="com.example.yasainikki.mypage"
+        android:label="activity_mypage"
+        tools:layout="@layout/activity_mypage" />
+    <activity
+        android:id="@+id/blogsakusei"
+        android:name="com.example.yasainikki.blogsakusei"
+        android:label="activity_blogsakusei"
+        tools:layout="@layout/activity_blogsakusei" />
+</navigation>

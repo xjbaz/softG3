@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:onClick="maypage"
+        android:title="マイページ"
+        android:icon="@drawable/baseline_search_24" />
+    <item
+        android:id="@+id/nav_dashboard"
+        android:title="さがす"
+        android:icon="@drawable/baseline_search_24" />
+    <item
+        android:id="@+id/nav_notifications"
+        android:title="のせる"
+        android:icon="@drawable/ic_launcher_foreground" />
+</menu>

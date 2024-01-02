@@ -12,10 +12,13 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
     }
 
     public void sixth_button1(View view){
         Intent intent = new Intent(this,main.class);
         startActivities(new Intent[]{intent});
     }
+
+
 }

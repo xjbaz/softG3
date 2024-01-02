@@ -57,6 +57,6 @@
             android:text="ログイン"
             android:onClick="first_button2"/>
 
-</LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
