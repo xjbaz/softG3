@@ -18,6 +18,7 @@
         app:title="やさい日記" />
 
     <TextView
+        android:id="@+id/blogsakusei"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

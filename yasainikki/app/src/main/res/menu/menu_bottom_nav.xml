@@ -2,15 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_home"
-        android:onClick="maypage"
         android:title="マイページ"
-        android:icon="@drawable/baseline_search_24" />
+        android:icon="@drawable/ic_launcher_home" />
     <item
         android:id="@+id/nav_dashboard"
         android:title="さがす"
-        android:icon="@drawable/baseline_search_24" />
+        android:icon="@drawable/ic_launcher_search" />
     <item
         android:id="@+id/nav_notifications"
         android:title="のせる"
-        android:icon="@drawable/ic_launcher_foreground" />
+        android:icon="@drawable/ic_launcher_mode" />
 </menu>

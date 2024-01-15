@@ -30,10 +30,19 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"></LinearLayout>
 
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:onClick="thirteenth_button1"
+        android:backgroundTint="#ff9800"
         android:text="戻る" />
+
+    </TableLayout>
 </LinearLayout>
