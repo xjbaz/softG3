@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">yasainikki</string>
+
+    <string-array name="dropdown_items">
+        <item>ミニトマト</item>
+        <item>レタス</item>
+        <item>キュウリ</item>
+        <item>ナス</item>
+        <item>ピーマン</item>
+        <item>大葉</item>
+        <item>えんどう豆</item>
+        <!-- 他の項目 -->
+    </string-array>
 </resources>

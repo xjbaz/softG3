@@ -27,49 +27,65 @@
         android:visibility="visible" />
 
     <EditText
-        android:id="@+id/editTextAccountName"
+        android:id="@+id/userId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="アカウント名" />
+        android:inputType="phone"
+        android:hint="ユーザID" />
 
     <!-- パスワード入力 -->
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextAccountName"
+        android:layout_marginTop="16dp"
+        android:hint="メールアドレス(電話番号)" />
+
+    <!-- 電話番号入力 -->
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="名前" />
+
+    <!-- 生年月日入力 -->
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:inputType="textPassword"
         android:hint="パスワード" />
 
-    <!-- 電話番号入力 -->
-    <EditText
-        android:id="@+id/editTextPhoneNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextPassword"
-        android:layout_marginTop="16dp"
-        android:inputType="phone"
-        android:hint="電話番号" />
-
-    <!-- 生年月日入力 -->
-    <EditText
-        android:id="@+id/editTextBirthdate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextPhoneNumber"
-        android:layout_marginTop="16dp"
-        android:inputType="date"
-        android:hint="生年月日" />
-
     <!-- 地域入力 -->
     <EditText
-        android:id="@+id/editTextRegion"
+        android:id="@+id/profImg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextBirthdate"
+        android:layout_marginTop="16dp"
+        android:hint="プロフィール画像" />
+
+    <EditText
+        android:id="@+id/bio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="自己紹介文" />
+
+    <EditText
+        android:id="@+id/region"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="地域" />
+
+    <EditText
+        android:id="@+id/birth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="生年月日" />
 
     <LinearLayout
         android:layout_width="match_parent"

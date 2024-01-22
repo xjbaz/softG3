@@ -1,11 +1,6 @@
 package com.example.yasainikki;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.NavigationUI;
-import androidx.fragment.app.FragmentManager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,4 +20,5 @@ public class login extends AppCompatActivity {
         Intent intent = new Intent(this,main.class);
         startActivities(new Intent[]{intent});
     }
+
 }
