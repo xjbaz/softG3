@@ -121,7 +121,7 @@ public class blogsakusei extends AppCompatActivity {
 
     private void addDataToDatabase(String posttext, String selectedItem) {
         //リクエストの作成ユーザからの入力をサーバに送信するPOSTリクエストが処理
-        String url = "http:/172.20.10.2/courseApp/blogsakusei.php";
+        String url = "http:/172.21.39.140/courseApp/blogsakusei.php";
         RequestQueue queue = Volley.newRequestQueue(blogsakusei.this);
 
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
