@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "844242415435",
+    "project_id": "yasainikki-d8178",
+    "storage_bucket": "yasainikki-d8178.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844242415435:android:8981519d8795da93f682ce",
+        "android_client_info": {
+          "package_name": "com.example.yasainikki"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4jcivZ503gXiWKfFLd030rrRkG9sQFQY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
