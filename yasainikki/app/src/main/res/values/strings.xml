@@ -11,4 +11,7 @@
         <item>えんどう豆</item>
         <!-- 他の項目 -->
     </string-array>
+
+    <string name="post_description">投稿内容</string>
+    <string name="user_name">投稿内容</string>
 </resources>

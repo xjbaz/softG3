@@ -13,9 +13,10 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FF9800"
+        android:background="#FF5530"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        android:theme="?attr/actionBarTheme"
+        app:title="やさい日記"/>
 
 
     <TextView
@@ -24,27 +25,30 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="利用規約"
-        android:textSize="48sp"
+        android:layout_margin="20sp"
+        android:textSize="45sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:padding="20dp"
         android:text="本サービスをご利用いただくには、\n下記の内容に同意をお願い致します"
-        android:textSize="24sp" />
+        android:textSize="23sp" />
 
     <Switch
         android:id="@+id/second_switch1"
         android:layout_width="match_parent"
         android:layout_height="93dp"
+        android:padding="20dp"
         android:text="利用規約に同意する"
         android:textSize="24sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="30dp"
         android:orientation="horizontal">
 
         <Button

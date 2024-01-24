@@ -28,44 +28,31 @@
         android:textStyle="bold" />
 
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"></LinearLayout>
+        android:layout_height="wrap_content">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        <LinearLayout
+            android:id="@+id/layout_posts"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <!-- テキストビューの例 -->
-        <TextView
-            android:id="@+id/textViewPost"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Post Content" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:backgroundTint="#ff9800"
+                android:onClick="thirteenth_button1"
+                android:text="戻る" />
 
-    </LinearLayout>
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:gravity="top">
+        </LinearLayout>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:backgroundTint="#ff9800"
-            android:onClick="thirteenth_button1"
-            android:text="戻る" />
 
-    </TableLayout>
-
+    </ScrollView>>
 
 
 </LinearLayout>

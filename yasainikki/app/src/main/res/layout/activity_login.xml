@@ -12,35 +12,42 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FF9800"
+        android:background="#FF5530"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:title="やさい日記" />
 
-    <EditText
-        android:id="@+id/editTextAccountName"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="アカウント名" />
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="30dp">
+        <EditText
 
-    <!-- パスワード入力 -->
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextAccountName"
-        android:layout_marginTop="16dp"
-        android:inputType="textPassword"
-        android:hint="パスワード" />
+            android:id="@+id/editTextAccountName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="アカウント名" />
 
-    <Button
-        android:id="@+id/first_button1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="sixth_button1"
-        android:text="ログン" />
+        <!-- パスワード入力 -->
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextAccountName"
+            android:layout_marginTop="16dp"
+            android:inputType="textPassword"
+            android:hint="パスワード" />
 
-
-
+        <Button
+            android:id="@+id/first_button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sixth_button1"
+            android:backgroundTint="#FF5530"
+            android:text="ログイン" />
+    </LinearLayout>
 
 </LinearLayout>

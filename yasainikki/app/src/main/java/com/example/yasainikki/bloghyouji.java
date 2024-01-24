@@ -2,9 +2,11 @@ package com.example.yasainikki;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +25,9 @@ import org.json.JSONObject;
 
 public class bloghyouji extends AppCompatActivity {
 
-    private TextView textViewPost;
+    //private TextView textViewPost;
+    private LinearLayout layoutPosts;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,25 +37,40 @@ public class bloghyouji extends AppCompatActivity {
 
         RequestQueue queue = Volley.newRequestQueue(this);
 
-        textViewPost = findViewById(R.id.textViewPost);
+        //textViewPost = findViewById(R.id.textViewPost);
+        layoutPosts = findViewById(R.id.layout_posts);
 
-        /*JsonArrayRequest jsonArrayRequest = new JsonArrayRequest
-                (Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                     @Override
-                    public void onResponse(JSONArray result) {
+                    public void onResponse(JSONObject response) {
                         try {
                             //JSONArray firstItem = response.getJSONArray("SQL_test");
-                            JSONArray sqlTestArray = result.getJSONArray("SQL_test");
+                            JSONArray sqlTestArray = response.getJSONArray("SQL_test");
 
                             // JSONデータから必要な情報を抽出
                             // 例: 最初の要素のpost_textを取得
-                            if (result.length() > 0) {
+                            if (sqlTestArray.length() > 0) {
                                 //JSONArray firstItem = response.getJSONArray("SQL_test");
-                                JSONObject firstItem = sqlTestArray.getJSONObject(0);
-                                String postContent = firstItem.getString("post_text");
-                                // テキストビューに内容をセット
-                                textViewPost.setText(postContent);
+                                for (int i = 0;i < sqlTestArray.length();i++) {
+                                    JSONObject firstItem = sqlTestArray.getJSONObject(i);
+                                    String postContent = firstItem.getString("post_text");
+                                    // テキストビューに内容をセット
+                                    /*TextView textView = new TextView(bloghyouji.this);
+                                    textView.setText(postContent);
+
+                                    textView.setLayoutParams(new LinearLayout.LayoutParams(
+                                            LinearLayout.LayoutParams.MATCH_PARENT,
+                                            LinearLayout.LayoutParams.WRAP_CONTENT));*/
+
+                                    View postView = getLayoutInflater().inflate(R.layout.post_item, layoutPosts, false);
+                                    TextView textViewPost = postView.findViewById(R.id.textViewPost);
+                                    textViewPost.setText(postContent);
+
+                                    layoutPosts.addView(postView);
+                                }
                             }
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -76,23 +95,8 @@ public class bloghyouji extends AppCompatActivity {
                 });
 
         // リクエストをRequestQueueに追加する
-        queue.add(jsonArrayRequest);*/
+        queue.add(jsonObjectRequest);
 
-        /*new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    // JSONデータから必要な情報を抽出
-                    String postContent = response.getString("post_text");
-
-                    // テキストビューに内容をセット
-                    textViewPost.setText(postContent);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        };*/
-        //RequestQueue queue = Volley.newRequestQueue(this);
     }
 
     public void thirteenth_button1(View view){ finish(); }

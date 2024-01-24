@@ -12,7 +12,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FF9800"
+        android:background="#FF5530"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:title="やさい日記" />
@@ -21,28 +21,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:textSize="20dp"
             android:layout_gravity="center_horizontal"
             android:onClick="seventh_button1"
+            android:backgroundTint="#FF5530"
             android:text="マイページ"/>
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:textSize="20dp"
             android:layout_gravity="center_horizontal"
             android:onClick="seventh_button2"
+            android:backgroundTint="#FF5530"
             android:text="やさい検索"/>
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:textSize="20dp"
             android:layout_gravity="center_horizontal"
+            android:backgroundTint="#FF5530"
             android:onClick="seventh_button3"
-            android:text="新しい日記"/>
+            android:text="新しい日記" />
     </LinearLayout>
 
 
