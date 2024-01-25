@@ -16,6 +16,7 @@ import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class mypage extends AppCompatActivity {
 
@@ -54,8 +55,10 @@ public class mypage extends AppCompatActivity {
         startActivities(new Intent[]{intent});
     }
     public void eighth_button7(View view){
-        Intent intent = new Intent(this,title.class);
-        startActivities(new Intent[]{intent});
+        FirebaseAuth.getInstance().signOut();
+        Intent loginActivity = new Intent(getApplicationContext(),LoginActivity.class);
+        startActivity(loginActivity);
+        finish();
     }
 
     public void eighth_button8(View view){

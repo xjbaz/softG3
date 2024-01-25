@@ -81,13 +81,13 @@ public class blogsakusei extends AppCompatActivity {
         selectedItemEdt = findViewById(R.id.spinner);
         postbutton = findViewById(R.id.postbutton);
 
-        postbutton.setOnClickListener(new View.OnClickListener() {
+        /*postbutton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 posttext = posttextEdt.getText().toString();
                 selectedItem = spinner.getSelectedItem().toString();
                 addDataToDatabase(posttext, selectedItem);
             }
-        });
+        });*/
 
     }
     private static final int PICK_IMAGE = 1;

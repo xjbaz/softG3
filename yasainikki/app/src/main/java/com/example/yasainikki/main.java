@@ -15,7 +15,12 @@ public class main extends AppCompatActivity {
     }
 
     public void seventh_button1(View view){
-        Intent intent = new Intent(this,mypage.class);
+        Intent intent = new Intent(this,bloghyouji.class);
+        startActivities(new Intent[]{intent});
+    }
+
+    public void seventh_button2(View view){
+        Intent intent = new Intent(this,blogkensaku.class);
         startActivities(new Intent[]{intent});
     }
 

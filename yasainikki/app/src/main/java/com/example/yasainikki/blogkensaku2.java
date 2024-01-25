@@ -2,7 +2,7 @@ package com.example.yasainikki;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,30 +10,28 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.Volley;
-
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class bloghyouji extends AppCompatActivity {
+import java.nio.charset.StandardCharsets;
 
-    //private TextView textViewPost;
+public class blogkensaku2 extends AppCompatActivity {
+
     private LinearLayout layoutPosts;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bloghyouji);
+        setContentView(R.layout.activity_blogkensaku2);
 
-        String url = "http://172.20.10.2/courseApp/myblog.php";
+        String url = "http://172.20.10.2/courseApp/blogkensaku.php";
 
         RequestQueue queue = Volley.newRequestQueue(this);
 
@@ -46,7 +44,7 @@ public class bloghyouji extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             //JSONArray firstItem = response.getJSONArray("SQL_test");
-                            JSONArray sqlTestArray = response.getJSONArray("SQL_test");
+                            JSONArray sqlTestArray = response.getJSONArray("kensaku");
 
                             // JSONデータから必要な情報を抽出
                             // 例: 最初の要素のpost_textを取得
@@ -56,12 +54,7 @@ public class bloghyouji extends AppCompatActivity {
                                     JSONObject firstItem = sqlTestArray.getJSONObject(i);
                                     String postContent = firstItem.getString("post_text");
                                     // テキストビューに内容をセット
-                                    /*TextView textView = new TextView(bloghyouji.this);
-                                    textView.setText(postContent);
 
-                                    textView.setLayoutParams(new LinearLayout.LayoutParams(
-                                            LinearLayout.LayoutParams.MATCH_PARENT,
-                                            LinearLayout.LayoutParams.WRAP_CONTENT));*/
 
                                     View postView = getLayoutInflater().inflate(R.layout.post_item, layoutPosts, false);
                                     TextView textViewPost = postView.findViewById(R.id.textViewPost);
@@ -88,9 +81,15 @@ public class bloghyouji extends AppCompatActivity {
                         if (error.networkResponse != null) {
                             errorMessage += "\nステータスコード: " + error.networkResponse.statusCode;
                             Log.e("NetworkError", "ステータスコード: " + error.networkResponse.statusCode);
+
+                            if (error.networkResponse.data != null) {
+                                String responseBody = new String(error.networkResponse.data, StandardCharsets.UTF_8);
+                                errorMessage += "\nレスポンス本文: " + responseBody;
+                                Log.e("NetworkError", "レスポンス本文: " + responseBody);
+                            }
                             // 他のネットワーク情報を取得する場合もあります
                         }
-                            Toast.makeText(bloghyouji.this,"通信に失敗しました。",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(blogkensaku2.this,"通信に失敗しました。",Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -99,5 +98,10 @@ public class bloghyouji extends AppCompatActivity {
 
     }
 
-    public void thirteenth_button1(View view){ finish(); }
+    public void blog_button3(View view){ finish(); }
+
+    public void blog_button4(View view){
+        Intent intent = new Intent(this,main.class);
+        startActivities(new Intent[]{intent});
+    }
 }
