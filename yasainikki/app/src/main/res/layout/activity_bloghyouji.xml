@@ -48,7 +48,6 @@
                 android:onClick="thirteenth_button1"
                 android:text="戻る" />
 
-
         </LinearLayout>
 
 

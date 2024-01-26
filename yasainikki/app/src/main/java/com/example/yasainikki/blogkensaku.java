@@ -63,7 +63,7 @@ public class blogkensaku extends AppCompatActivity {
 
     private void addDataToDatabase(String vegetables) {
         //リクエストの作成ユーザからの入力をサーバに送信するPOSTリクエストが処理
-        String url = "http://172.20.10.2/courseApp/blogkensaku.php";
+        String url = "http://192.168.3.5/courseApp/blogkensaku.php";
         RequestQueue queue = Volley.newRequestQueue(blogkensaku.this);
 
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {

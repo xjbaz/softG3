@@ -33,7 +33,7 @@ public class bloghyouji extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bloghyouji);
 
-        String url = "http://172.20.10.2/courseApp/myblog.php";
+        String url = "http://192.168.3.5/courseApp/myblog.php";
 
         RequestQueue queue = Volley.newRequestQueue(this);
 

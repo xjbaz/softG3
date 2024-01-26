@@ -31,7 +31,7 @@ public class blogkensaku2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blogkensaku2);
 
-        String url = "http://172.20.10.2/courseApp/blogkensaku.php";
+        String url = "http://192.168.3.5/courseApp/blogkensaku.php";
 
         RequestQueue queue = Volley.newRequestQueue(this);
 
