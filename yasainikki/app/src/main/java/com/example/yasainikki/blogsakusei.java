@@ -35,6 +35,8 @@ import java.util.Map;
 public class blogsakusei extends AppCompatActivity {
     //設定した画像
     private ImageView imageView;
+    //ユーザ名を受け取る
+    private String userName;
     //入力フィールドの変数
     private EditText posttextEdt;
     private Spinner selectedItemEdt;
@@ -89,6 +91,8 @@ public class blogsakusei extends AppCompatActivity {
             }
         });*/
 
+        userName = getIntent().getStringExtra("USER_NAME");
+
     }
     private static final int PICK_IMAGE = 1;
 
@@ -138,6 +142,7 @@ public class blogsakusei extends AppCompatActivity {
                 spinner.setSelection(0); // Spinnerの選択を最初のアイテムにリセット
 
                 Intent intent = new Intent(blogsakusei.this,blogtoukoukanryou.class);
+                intent.putExtra("USER_NAME", userName);
                 startActivities(new Intent[]{intent});
             }
         }, new com.android.volley.Response.ErrorListener() {
@@ -158,6 +163,7 @@ public class blogsakusei extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("post_text", posttext);
                 params.put("vegetables", selectedItem);
+                params.put("user_name", userName);
                 return params;
             }
         };

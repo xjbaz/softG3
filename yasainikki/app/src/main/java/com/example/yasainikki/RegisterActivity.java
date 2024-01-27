@@ -144,44 +144,54 @@ public class RegisterActivity extends AppCompatActivity {
     //update user photo and name
     private void updateUserInfo(String name, Uri pickedImgUri, FirebaseUser currentUser) {
         //first we need to upload user photo to firebase storage and get url
-        StorageReference mStorage = FirebaseStorage.getInstance().getReference().child("users_photos");
-        StorageReference imageFilePath = mStorage.child(pickedImgUri.getLastPathSegment());
-        imageFilePath.putFile(pickedImgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                //image uploaded successfully
-                //now we can get our image url
-                imageFilePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        //uri contain user image url
+        if (pickedImgUri != null) {
+            StorageReference mStorage = FirebaseStorage.getInstance().getReference().child("users_photos");
+            final StorageReference imageFilePath = mStorage.child(pickedImgUri.getLastPathSegment());
+            imageFilePath.putFile(pickedImgUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    // 画像アップロードが成功したら、URLを取得してユーザープロフィールを更新する
+                    imageFilePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(name)
+                                    .setPhotoUri(uri)
+                                    .build();
 
-                        UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
-                                .setDisplayName(name)
-                                .setPhotoUri(uri)
-                                .build();
-
-                        currentUser.updateProfile(profileUpdate)
-                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-
-                                        if(task.isSuccessful()){
-                                            //user info updated successfully
-                                            showMessage("Register Complete");
-                                            updateUI();
+                            currentUser.updateProfile(profileUpdate)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+                                                // ユーザー情報更新成功
+                                                showMessage("Register Complete");
+                                                updateUI();
+                                            }
                                         }
+                                    });
+                        }
+                    });
+                }
+            });
+        } else {
+            // 画像が選択されていない場合は名前のみを更新する
+            UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
+                    .setDisplayName(name)
+                    .build();
 
-
-                                    }
-                                });
-
-
-                    }
-                });
-
-            }
-        });
+            currentUser.updateProfile(profileUpdate)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                // ユーザー情報更新成功
+                                showMessage("Register Complete");
+                                updateUI();
+                            }
+                        }
+                    });
+        }
 
 
 
@@ -190,13 +200,12 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void updateUI() {
-
-        Intent homeActivity = new Intent(getApplicationContext(),mypage.class);
+        String name = userName.getText().toString();
+        //初期設定後にlogin画面へ遷移する
+        Intent homeActivity = new Intent(getApplicationContext(),main.class);
+        homeActivity.putExtra("USER_NAME", name);
         startActivity(homeActivity);
         finish();
-
-
-
 
     }
 

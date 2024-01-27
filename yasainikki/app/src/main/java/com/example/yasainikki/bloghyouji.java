@@ -28,6 +28,8 @@ public class bloghyouji extends AppCompatActivity {
     //private TextView textViewPost;
     private LinearLayout layoutPosts;
 
+    private String userName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +68,8 @@ public class bloghyouji extends AppCompatActivity {
                                     View postView = getLayoutInflater().inflate(R.layout.post_item, layoutPosts, false);
                                     TextView textViewPost = postView.findViewById(R.id.textViewPost);
                                     textViewPost.setText(postContent);
+                                    TextView username = postView.findViewById(R.id.post_user_name);
+                                    username.setText(userName);
 
                                     layoutPosts.addView(postView);
                                 }
@@ -96,6 +100,8 @@ public class bloghyouji extends AppCompatActivity {
 
         // リクエストをRequestQueueに追加する
         queue.add(jsonObjectRequest);
+
+        userName = getIntent().getStringExtra("USER_NAME");
 
     }
 
